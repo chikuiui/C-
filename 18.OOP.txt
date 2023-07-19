@@ -1,0 +1,26 @@
+     OOP (Object Oriented Programming)
+
+-> It is a way to build a software and a program.
+-> we can use functional programming when the size of program is small but when we have to design a complex 
+   software that contain multiple entities and these entities interact with each other then we use OOP.
+-> C++ support OOP and functional programming both.
+-> we can create an object using stack and heap both.
+
+   CLASS  -> A datatype with functions. (an blueprint that contains some attributes like functions and data members.
+   OBJECT -> A varible of a class. (an instance of a class).
+
+class Complex{
+   private:
+     int real;
+     int imag;
+   public:
+     Complex(int r,int i){
+       real = r;
+       imag = i;
+     }
+     void print(){
+       cout << real << " " << imag << endl;
+     }
+};
+
+     

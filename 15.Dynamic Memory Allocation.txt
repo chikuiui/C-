@@ -1,0 +1,48 @@
+              DYNAMIC MEMORY ALLOCATION
+
+-> It is a pool of memory called Heap.
+
+            |--------------------| 
+            |                    |
+            |                    |STACK -> used to store function call activation records.
+            |                    |
+            |--------------------|
+            |                    |
+            |                    |HEAP -> Dynamic memory 
+            |                    |
+            |--------------------|
+            |                    |DATA -> static/global variables store.
+            |--------------------|
+            |  Executable Code   |
+            |--------------------|
+
+when we use new keyword means dynamic memory allocation.
+
+Why dynamic memory allocation?
+-> it gives ou flexibility to allocate some memory which user is incharge of as a programmer.
+-> compiler has no control over it.
+
+
+ex -> int main(){      // in stack(1)
+       static int a;   // in data section
+       int b,c;        // in stack(2)
+       int *ptr = new int[5]; // in heap where ptr is pointing to the array of size 5.
+       delete []ptr; // to deallocate the memory.
+       ptr = NULL; // we can't leave a pointer empty.
+      }
+NULL -> special value for pointers.
+     -> it is a macro which initialized as 0.
+
+
+Memory Leak -> A situation where you allocate the dynamic memory but not deallocating it.
+            
+     If memory leak situation happens then the program will crash after some time and heap 
+     become full.
+
+
+new --
+     |-> It is an operator.
+     |-> It returns the pointer to the memory.
+     |-> Always used for dynamic memory allocation.
+     |-> calls construct for objects of class/struct.
+     |-> can initialized value also(ex -> int *ptr = new int(5);)

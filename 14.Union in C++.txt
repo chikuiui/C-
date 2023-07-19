@@ -1,0 +1,56 @@
+                       Union in C++
+
+-> It is also called user defined datatype.
+-> Syntactically Union is similar to structure and classes.
+-> But when it comes to internal functions they are totally different.
+
+
+#include<iostream>
+using namespace std;
+
+Union Test{
+	int x;
+	int y;
+}
+
+
+int main(){
+	Test t;
+	t.x = 10;
+	t.y = 20;
+	cout << t.x << " " << t.y << endl;
+	cout << sizeof(t) << endl;
+}
+
+NOTE -> the size of union object is define by the largest datatype present in the union.
+NOTE -> in union all datatype point to same location.
+
+Application of Union :-
+1.Type Punning :-
+  we convert one type to another type without using any explict typecasting and we get
+  internal representation of that particular type.
+
+Union Test{
+	int x;
+	float y;
+}
+int main(){
+	Test t;
+	t.y = 1.1;
+	cout << t.x << endl; // binary representation of t.y using t.x = 1066192077
+}
+
+2. using Anonomyous union to use one type for multiple purpose.
+  ->used for doubly linked list and binary tree.  
+
+   Struct Note{
+      int data;
+      Union{
+         struct{
+           Node *left,*right;
+         };
+         struct{
+           Node *prev,*next;
+         }
+      }
+   };

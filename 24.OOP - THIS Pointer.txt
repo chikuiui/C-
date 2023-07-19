@@ -1,0 +1,45 @@
+                                    THIS POINTER IN C++
+
+-> This Pointer is constant pointer,if try to change it will give compiler error.
+-> C++ compiler special pointer which referes to the object on which you are calling this function.
+-> When we create a class and when we create multiple objects of this class all these objects have their own data.
+
+
+QUE->how is this possible 
+Ans-> due to this pointer.
+
+
+class Point{
+  int x,y;
+ public:
+  Point(int x1,int y1){             (internally compiler convert these lines)
+    x = x1;               ===          this->x = x1;
+    y = y1;               ===          this->y = y1;
+  }
+};
+
+
+Advantage of this pointer :-
+
+1. Avoid name collision.
+
+       class Point{
+          int x,y;
+        public:
+          Point(int x,int y){ // avoiding name collision using this pointer.            
+            this->x = x;
+            this->y = y;              
+          }
+       };
+
+2. Useful to chain functions.
+       Point &setX(int x){
+           this->x = x;
+           return *this;
+       }
+       Point &setY(int y){
+           this->y = y;
+           return *this;
+       }
+   -> suppose we have an object of Point p(10,10) and these two functions are inside the class of above.    
+   -> in main function we can use a statement like this ->  p.setX(5).setY(10);

@@ -1,0 +1,44 @@
+               FRIEND FUNCTIONS AND CLASSES
+
+-> A class can specify another class or function as friend of it.
+-> It allow other classes and functions to access private and protected members
+   of a class.
+-> It is considered against encapsulation and standard OOP practice.
+-> Most of OOP language don't support friend class and functions.
+
+   [ 1. Friendship is Granted]
+   [ 2. Friendship is mutual (only one class has access to private members of other class)]
+   [ 3. Not Transitive (-> means friend of) (A->B , B->C doesn't mean A->C)]
+   [ 4. Not Inherited]
+
+
+   class Printer{
+      public:
+        void printEmp(const Employee &e);
+   };
+   
+   class Employee{
+      private:
+        int id;
+        string name;
+      public:
+        friend void printer :: printEmp(const Employee &e);  // this is friend function
+        Employee(int i,string n):id(i),name(n){}
+   };
+    
+   void Printer :: printEmp(const Employee &e){
+      cout << e.id << " " << e.name << endl;
+   }
+   
+   int main(){
+      Printer p;
+      Employee e(101,"John");
+      p.printEmp(e);
+   }
+   
+   o/p ->   101  John
+*********************************************************************************************
+ To make all functions of a class friend we make a class friend
+ ex ->  friend class Printer
+*********************************************************************************************
+   

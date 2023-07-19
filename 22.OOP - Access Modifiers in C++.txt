@@ -1,0 +1,17 @@
+                                          Access Modifiers in C++
+
+-> Access modifiers are used to implement an important aspect of Object-Oriented Programming known as Data Hiding.
+-> There are 3 types of access modifiers available in C++ :-
+   1.Public
+   2.Private
+   3.Protected
+
+1.Public :-
+ -> The public members are accessible from any part of the program.
+
+2.Private :-
+ -> The private members of the class cannot be accessed outside the class.
+
+3.Protected :- (related to inheritance)
+ -> Not accessable outside the class except inherited class.
+ 

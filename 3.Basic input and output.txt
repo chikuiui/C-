@@ -1,0 +1,17 @@
+
+   Basic Input and Ouput in C++ :-
+
+cout ->   "<<"   -> write on standard output stream.(on monitor)
+cin  ->   ">>"   -> read from standard input stream.(from keyboard)
+
+
+ //  For debugging
+
+cerr ->  write on standard unbuffered error stream.
+clog ->  write on standard buffered error stream.
+
+
+" << " -> insertion operator(it used to insert something on the output stream)
+" >> " -> extraction operator(is used to extract/read something from input device)
+
+

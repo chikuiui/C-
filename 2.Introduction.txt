@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+   cout << "HEllo" << endl;  
+
+   return 0;
+}
+
+
+
+
+ 1. # -> Preprocessor
+ 2. iostream -> header file
+ 3. namespace -> to avoid name collision.
+ 4. cout -> standard output
+ 5. cin -> standard input.
+ 6. main() -> The function where execution of c++ code begins.
+ 7. return 0 -> function successful execution.
+ 8. endl -> insert new line and flushes the stream(output buffer).
+
+Preprocessor -> It is a software which runs before complilation.
+             -> It process these files include the declaration of the function
+                written in header file.
+Header file  -> It contain some declarations,classes,functions which used in program.
+
+NOTE 1.-> we should avoid using void main() instead of int main() because when program
+        execution complete in int main() it return 0 so than machine will know that 
+        program executes successfully but in void main() don't return anything so 
+        machine will not know so it can be abnormal case.
+
+NOTE 2.-> we should avoid using namespace because suppose we have two header file 
+          and both header file contain same function name but different code inside
+          so complier will not know which defination is being used and it create an 
+          ambiguity in program.

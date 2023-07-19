@@ -1,0 +1,62 @@
+                                      Operator Overloading
+
+-> C++ proved this flexibility to overload the operator.
+-> Java doesn't support operator overloading.
+
+   class Complex{
+      private:
+        int real,imag;
+      public:
+        Complex(int r=0,int i=0):real(r),imag(i){}
+        
+        Complex Operator+(Complex const &obj){
+             Complex res;
+             res.real = real + obj.real;
+             res.imag = imag + obj.imag;
+             return res;
+        }
+        void print(){cout << real << " " << imag << endl;}
+   }
+
+   int main(){
+         Complex c1(10,5),c2(20,30);
+         Complex c3 = c1 + c2;  // c1.operator+(c2)
+         c3.print();
+   }
+   
+ o/p ->  30  35
+*************************************************************************************************
+Que. What is the use of it ?
+->   C4 = c1 + c2 * c3;
+   when we need to calculate this expression instead of writing normal function we can use 
+   operator overloading.
+   Complex operator *(Complex const &obj){
+       Complex res;
+       res.real = real * obj.real;
+       res.imag = imag * obj.imag;
+       return res;
+   }
+*************************************************************************************************
+Que. Can we write anything inside the opeartor functions?
+-> Yes you can write cout statements also but should we write these things,  the purpose of 
+   operator overloading is to make code more readable.
+*************************************************************************************************
+Que. What about precedence,associativity & arity? // arity -> no. of operands it take.
+->  same as normal statements.
+*************************************************************************************************
+Que. Can we overload all operators?
+->  No (sizeof) , (.) , (.*) , (::) , (?:)
+    .  -> dot
+    :: -> scope resolution.
+    ?: -> conditional.
+*************************************************************************************************
+Que. Assignment Operator
+->   if we don't write assignment opeartor compiler will create default assignment operator
+     and it works fine. 
+     Test t1,t2;
+     t2 = t1;
+*************************************************************************************************
+Que. Do we need to write our own Assignment Operator?
+->   default assignment operator does shallow copy similar to copy constructor.
+     when class contain dynamic cmemory allocation or pointerthen we should wttite our own
+     assignment operator.

@@ -1,0 +1,38 @@
+                                STRUCT IN C++
+
+-> Structure is also called user define-datatype.
+-> It allow us to store multiple items together.
+-> These multiple items can be of any data-type.
+
+
+#include<iostream>
+using namespace std;
+
+
+struct Point{
+	int x;
+	int y;
+};
+
+int main(){
+	Point p;   // In C++ it is not mandidatory to use struct in front of object but in C we have to use "struct Point p;"  
+	// we can use this also Point p = {10,20}; this will also work.
+        p.x = 10;
+	p.y = 20;
+        cout << p.x << " " << p.y << endl;
+}
+
+
+Some Points on Struct :-
+   1. struct is a c type construct.
+   2. It was added to C programming language to support composite(multiple) datatype.
+   3. Since C++ supports everything that C supports bcoz of backward compatibility thats why structure is included
+      in C++ also.
+   
+NOTE -> C++ has a construct called Class which can do almost everything that we can do with a struct.
+
+TO access a structure member using a pointer we use '->' 
+              Ex ->  Point p = {10,20};
+                     Point *ptr = p;
+                     p->x = 12;
+                     p->y = 13; 

@@ -1,0 +1,75 @@
+                                 Virtual Functions
+
+-> It is a concept related to Inheritance.
+
+NOTE -> A base class type reference on pointer can refer to a derived class object.
+Ex -> NOTE
+
+class Base{}
+class Derived : public Base{}
+
+int main(){
+  Base *b = new Derived;
+  Derived d;
+  Base &b = d;
+}
+
+*********************************************************************************
+
+class Base{
+   public:
+      void print(){cout << "BASE" << endl;}
+};
+
+class Derived : public Base{
+   public:
+      void print(){cout << "Derived" << endl;}
+};
+
+int main(){
+   Base b;
+   Derived d;
+   b.print();
+   d.print();
+   
+   Base *ptr = &d;
+   ptr->print();        // ideally it should print derived but it print base bcoz pointer
+}                       // is of base type.
+                                               |
+o/p ->    Base class                           |
+          Derived class                        |
+          Base class                           |
+                                               |
+                                               |
+                           To avoid this case where the type of pointer should not decide
+                           the function to be called it should be decided by the object to
+                           which  is pointing.
+                               |
+                           We use virtual keyword.
+                           In base class :
+                             public:
+                               virtual void print(){cout << "BASE" << endl;}
+*********************************************************************************************
+
+Que. Working of virtual functions ?
+  
+   -> C++ standard doesn't say anything about implementation of virtual functions.
+   -> But in general virtual functions implemented by most of compiler are like this:-
+   -> Compiler uses two things to implement virtual functions.
+      1.VPTR(for every object)
+      2.VTABLE(for every class)
+   -> VPTR points to VTABLE
+   
+   -> when creating object of a class ,compiler add some code to constructor,this code sets
+      VPTR to VTABLE of this class.
+   -> VTABLE of class stores adress of all virtual functions present in the class.
+   -> when making calls of overridden functions
+      Compiler -> VPTR -> VTABLE -> adress of function.
+   -> virtual functions do extra cpu cycle but we should have not to worry about it,until 
+      unless we are working on time constrain environment.
+**********************************************************************************************
+                               Override Keyword
+
+-> The purpose of override keyword is to make code more readable.
+-> It avoid errors.
+                                            

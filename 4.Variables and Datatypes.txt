@@ -1,0 +1,51 @@
+
+Memory -> array of bytes.
+
+Variable -> it represent a memory location associated with name.
+
+
+Datatypes :-
+   Three types of datatype
+
+Primary -> bulit in
+Derived -> derived from the primitive or built in datatypes
+User Defined -> defined by user itself
+
+   Primary                     Derived                  User Defined
+
+-> Integer                  -> Function               -> Class
+-> Character                -> Array                  -> Structure
+-> Boolean                  -> Pointer                -> Union
+-> Float                    -> Reference              -> Enum
+-> Double                                             -> Typedef
+
+
+sizeof() -> gives you size of datatype.
+
+
+   Local Variable                                    Global Variable
+-> Declared inside function                       -> Declared outside function
+-> Accessed only inside function.                 -> Any function can access it.
+-> Initialized with random value.                 -> Initialized with default value(for int is 0)
+-> stored in stack.                               -> stored in RAM
+
+
+
+-> complier doesn't allow to create multiple variable with same name in same scope.
+
+Static variable :-
+  -> static local variable are initialized as 0 when created.
+  -> it wll stay throughout the program till its termination.
+  -> static variable are allocated during compile time.
+  -> static variables are stored in RAM.  
+
+const variable :-
+  -> const variable  means it cannot be modified.
+  
+
+
+
+
+
+
+   

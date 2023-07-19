@@ -1,0 +1,61 @@
+References :-
+
+  1.References create an alias.
+  2.Must be initialized when declared.
+  3.cannot refer to another location.
+  4.cannot be null.
+  5.safer and easy ot use.
+
+
+
+int main(){
+	int x = 10;
+	int &y = x;
+
+	cout << y << endl; // 10
+
+	x = x+5;
+
+	cout << y << endl; // 15
+
+	y = y+5;
+
+	cout << x << endl; // 20
+}
+
+
+APPLICATIONS OF REFERENCES :-
+
+
+1. To modify a passed parameter
+   void swap(int &a,int &b){
+	int temp = a;
+	a = b;
+	b = temp;
+   }
+
+   int main(){
+	int x=10,y=20;
+	swap(x,y);
+   }
+
+2. To avoid copy of large objects during function calls.
+   -> like passing of vector using reference in function instead of directly.
+
+3. Modification in for each loop
+   int main(){
+	vector<int> arr = {1,2,3};
+
+	for(auto &x : arr){
+	   x+=3;
+	}
+	for(auto x : arr){
+	 cout << x << " ";
+	}
+   }
+
+4. To avoid copy of large objects in for each loop.
+   -> suppose we have large length string instead of copying to variable
+      we can directly access it. like above.
+
+

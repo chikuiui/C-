@@ -1,0 +1,30 @@
+                                                         CONSTRUCTORS 
+
+  (I am using "They" because there can be multiple constructors in a class)
+
+-> constructors are special functions.
+-> They have same name as a class.
+-> They is used to initialize the data members of the class
+-> They do not have any return type.
+-> They are called when your object is created(whether using stack or heap).
+-> Compler automatically create a constructor if user don't write a constructor.
+   (This default constructor may initialize data-members with random value)
+
+example->
+         class Complex{
+           private:
+             int real;
+             int imag;
+           public:
+             Complex(int r,int i){  // This is a constructor.
+              real = r;
+              imag = i;
+             }
+             void print(){
+              cout << real << " " << imag << endl;
+             }
+          };
+  
+          int main(){
+             Complex c(10,20); // calling constructor when creating an object of Complex class.
+          }

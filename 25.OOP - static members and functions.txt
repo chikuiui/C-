@@ -1,0 +1,47 @@
+                       STATIC MEMBERS AND FUNCTIONS
+
+
+-> When we have static data members we should need some static functions for
+   modifying and accessing static data members.
+-> We can also access and modify static data members through normal functions
+   but it is considered as bad practice.
+-> Static functions don't have any this pointer.
+
+Static Members :-
+-> Shared among all objects.
+-> created once.
+-> defined outside the class.
+
+class Player{
+  public:
+    static int count;
+    Player(){count++;}
+    ~Player(){count--;}
+    static int getCount(){return count;}
+}
+
+int Player :: count = 0; // must define outside the class.
+
+int main(){
+  Player p1;
+  cout << Player :: count << endl;
+  Player p2;
+  cout << Player :: count << endl;
+  {
+    Player p3;
+    cout << Player :: count << endl;
+  }
+  cout << Player :: count << endl;
+  cout << Player :: getCount() << endl;
+}
+
+output ->    1
+             2
+             3
+             2
+             2
+
+
+
+
+

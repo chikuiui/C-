@@ -1,0 +1,90 @@
+                                  Abstraction 
+
+-> The technique of making few things/functionality private and showing only the 
+   things which are accessable to the public is called Abstraction.
+   (hiding internal details of a class)
+
+                                  Encapsulation
+
+-> Simply bundle the class data-members and functions together.
+
+                                  Polymorphism
+
+-> It means same name different functionality 
+-> Two types :-
+   1. static :-
+      -> function overloading(already done above)
+      -> default arguments(already done above)
+   2. dynamic :-
+      -> function overriding :-
+         ->we have same function name,same parameter,same return type on base class
+           and derived class.
+
+Runtime Polymorphism -> It is decided which function to call in runtime.
+Compiler Time Polymorphism -> function overloading is an example of this.
+
+
+                                  Inheritance
+
+-> The capability of class to derive properties and characterstics from another 
+   class is called Inheritance.
+
+-> Inheritance Access :-
+   -> public    -> protected and public of base class remain as they are.
+   -> private   -> protected and public of base class become private.
+   -> protected -> protected and public of base class become protected.
+
+ex ->   class Base{
+          protected:
+            int x;
+          public:
+            Base(int a):x(a){}
+        };
+     
+        class Derived : public Base{
+          private:
+            int y;
+          public:
+            Derived(int b):y(b){}         // this line give compiler error.
+            void print(){cout << x << " " << y << endl;}
+        };
+
+        int main(){
+           Derived d(10);
+           d.print();
+        }
+
+    o/p -> compiler error bcoz we are not initializing the base class
+           data members.
+           To avoid compiler error we use 
+           Derived(int a,int b):Base(a),y(b){}
+    
+-> MULTIPLE INHERITANCE :
+   -> when a classs inherits from two or more class.
+        
+       A      B                            A
+       |______|                            |
+          |                                B
+          |                                |
+          C                                C
+ 
+  Multiple  Inheritance           Multilevel Inheritance
+
+NOTE -> Java doesn't allow multiple inheritance bcoz there are problems
+        with multiple inheritance and the popular problem is called 
+        diamond problem.
+
+                              A
+                          ____|____
+                          |       |
+                          B       C      DIAMOND PROBLEM
+                          |_______|
+                              |
+                              D
+
+   ->  When we create an object of D then it will initialize the data members of Class A twice.
+   ->  Class a constructor called two times.
+   ->  C++ has solution for it that is use virtual keyword on class b and class c
+       ex ->   Class B : virtual public A{}
+               Class C : virtual public A{}
+            

@@ -1,0 +1,41 @@
+                        Constructors with Initializer List 
+
+There are two ways to initialize the data members of the class :-
+
+1. Normal Constructors
+2. Initializer List
+
+-> We should always prefer initializer list over normal constructor wherever as possible
+   due to its performance.
+
+      // THIS IS  SUPER CLASS
+
+EX->   class Test{
+           public:
+             Test(){
+               cout << "Default" << endl;
+             }
+             Test(int x){
+               cout << "Parameterized" << endl;
+             }
+       };
+
+
+
+   Class without Initializer List           ||       Class with Initializer list
+
+   class Main{                                       class Main{
+        Test t;                                           Test t;
+     public:                                           public:
+        Main(){                                           Main():t(10){} // this is.
+          t = Test(10);                              };
+        }
+    };
+
+  output ->  Default                                output ->   Parameterized
+             Parameterized
+
+
+-> a class without initializer list initializing the member twice bcoz when main calls
+   then data members is first initialized with random value then constructor is called.
+-> The advantage of initializer list is that members are initialized only once.

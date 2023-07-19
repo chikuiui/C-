@@ -1,0 +1,21 @@
+                                              DESTRUCTORS
+
+-> opposite of constructors.
+-> There can be only one destructor in class unlike constructors.
+-> It is called when an object is destroyed.
+-> Destructor is called when object goes out of the scope.
+-> Destructor are initialized by default.
+->(IMP) When we are allocating memory dynamically in the class then we need our own destructor.
+
+NOTE -> when you have multiple objects in the same scope they are destroyed in reverse order of 
+        their creation.
+
+
+Ex ->   class Test{
+             int x;
+           public:
+             Test(int i){
+                x = i;
+             }
+             ~Test(){//some code}
+         }; 

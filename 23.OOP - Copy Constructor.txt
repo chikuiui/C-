@@ -1,0 +1,44 @@
+                                            COPY CONSTRUCTOR
+
+-> special functions which are called when you create an object from an existing object
+
+class Test{
+   int *ptr;
+ public:
+   Test(int x){
+      ptr = new int(x);
+   }
+   ~Test(){
+      delete ptr;
+   }
+   void set(int x){
+      *ptr = x;
+   }
+   void print(){
+     coiut << *ptr << endl;
+   }
+};
+
+   Test t1(10);
+   Test t2(t1); // Test t2 = t1; both are calling default copy constructors.
+
+NOTE -> Test t2;
+        t2 = t1;  this is not calling copy constructor this is simply assigning. 
+
+-> we have yet to write our own copy constructor so the complier automatically create default
+   copy constructor but the problem with the default copy constructor is that it does shallow 
+   copy means new memory is not allocated to t2.
+-> To do deep copy then you need to write your own copy constructor,you can't rely on default
+   copy constructor.
+   
+  // we have to pass by reference otherwise it will become non termination recursion/error.
+  
+// copy this code to above program.
+ 
+   Test(const Test &t){
+      int val = *(t.ptr);
+      ptr = new int(val);
+   } 
+
+ 
+

@@ -1,0 +1,27 @@
+                    Structure Allignment :-
+
+
+-> Data Types have allignment requirements.
+-> Allignments are machine or compiler dependent.
+-> Compiler automatically take care of these allignment we don't have to worry about it.
+
+for 64 bit machine  size is -> 8 byte;
+for 32 bit machine  size is -> 4 byte;
+
+struct s1{                 ____________________________
+  char c1;                 |c1|     |d1      |c2|     |         
+  double d1;               |--8bit--|--8bit--|--8bit--|               
+  char c2;
+};                         -> it takes total 24 size
+
+struct s2{                 ___________________
+  char c1;                 |c1|c2|  |d1      |
+  char c2;                 |--8bit--|--8bit--|
+  double d1;
+};                         -> it takes total 16 size.
+
+
+Reasons for allignment :-
+1.Physical memory is accessed in a form of word.
+2.without allignment it is inefficient to store a variable.
+ (if we remove allignment then a 64bit machine requite 2 cpu cycles to read d1 in struct s1.)

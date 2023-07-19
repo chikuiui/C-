@@ -1,0 +1,93 @@
+                    Exception Handling in C++
+
+-> An Exception is an unknown situation that might happen when program is running.
+Ex--
+   |-> divide by zero.
+   |-> No heap memory available.
+   |-> Accessing array elements outside the allowed index.
+   |-> pop from an empty stack.
+
+
+-> C++ provide three keywords to handle the exception
+   ( try , catch , throw )
+   
+   try -> it may get the exception.
+   catch -> it handle the exception(when exception is caught in try block it goes to catch.)
+   throw -> it throws the exception.
+
+ex ->  #include<iostream>
+       using namespace std;
+
+       int main(){
+	int x,y;
+	cin >> x >> y;
+
+	try{
+	  if(y==0) throw 0;
+          cout << "Result is :" << x/y;
+	}catch(int x){
+	  cout << "Divisor is zero " << endl;
+	}
+       }
+
+STACK UNWINDING IN EXCEPTION HANDLING :-
+
+-> stack unwinding is a concept which says that if a function throws an exception
+   and this function doesn't handle the exception then the control goes to the caller
+   and if the caller doesn't handle the exception then the control goes to the caller
+   of caller and we keep on searching for handler for exception in function call stack.
+
+-> once we find the handler,the handler gets the control then after the program continues.
+
+NOTE -> IF there is no function that handling that exception then your program might crash.
+
+            USER DEFINED EXCEPTION :-
+
+-> In C++ we can tthrow an exception which is primitive datatype and we can also throw an 
+   exception which is of user defined datatype.
+-> but for general practice we should only throw non-primitive datatype.
+-> Java doesn't allow primitive exception.
+
+class ArraySizeZeroException{};
+class ArraySizeNegativeException{};
+
+
+int avg(int ar[],int n){
+	if(n==0)throw ArraySizeZeroException();
+	if(n < 0) throw ArraySizeNegativeException();
+
+	int sum = 0;
+	for(int i = 0 ; i < n ; i++){
+	  sum += ar[i];
+	}
+	return sum/n;
+}
+
+int main(){
+	int n;
+	cin >> n;
+	int *ar = new int[n];
+
+	for(int i = 0 ; i < n ; i++){
+	  cin >> ar[i];
+	}
+
+	try{
+	  int res = avg(arr,n);
+	  cout << res << endl;
+	}catch(ArraySizeZeroException &ex){
+      cout << "Array size is zero" << endl;
+	}catch(ArraySizeNegativeException &ex){
+      cout << "Array size is negative" << endl;
+	}
+}
+
+             EXCEPTION CLASS IN C++
+
+-> all standard libraries exception like bad_alloc,bad_cast,etc inherit from exception
+   class directly or indirectly.
+-> Exception class is root of all exception.
+-> when we are writing user defined exceptions we can also write our class
+   to inherit from exception class infact it is considered as a recommended
+   practice.
+

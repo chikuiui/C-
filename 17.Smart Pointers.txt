@@ -1,0 +1,76 @@
+                       Smart Pointers
+
+-> They try to solve memory leak problem.
+-> problem with normal pointer is that if someone write a program that allocating dynamic
+   memory and forgot to deallocate it it then program willl crash.
+
+-> Smart Pointers solve this memory leak problem by wrapping a given pointer into a class
+   object.
+
+
+NOTE -> when we create an object destructor is also initialized..
+       [ for normal object the destructor is called when the object goes out of the scope]
+       [ for Pointer object the destructor is not called until we explictly called the destructor]
+
+// Template Smart pointer
+
+template<class T>
+class SP{
+	T *ptr;
+   public:
+    SP(T *p == NULL){ptr = p;}
+    ~SP(){delete ptr;}
+    T &operator *(){return *ptr;}
+    T *operator->(){return ptr;}
+};
+
+int main(){
+	SP<int> sp(new int());
+	*sp = 20;
+	cout<< *sp << endl;
+}
+
+
+              C++ CONTAIN 3 - SMART POINTERS
+    -> Unique_ptr
+    -> Shared_ptr
+    -> weak_ptr
+
+1. Unique_ptr :- (preferred)
+  -> we cannot assign this unique pointer to other pointer.
+  -> is causes very less overhead.
+  -> one pointer owns an object.
+  -> we can change the ownership of unique pointer to other unique pointer using (move())
+  -> we cannot have co-ownership in unique pointer.
+    
+   // before(< c++14)
+    unique_ptr<Test> p1(new Test(10));
+   // after( >= c++14)
+    unique_ptr<Test> p1 = make_unique<Test>(10);
+
+   // to change ownership
+    Unique_ptr<Test> p2 = move(p1); // now p2 has ownership.
+
+2. Shared_ptr :-
+  -> It allows multiple shared pointers to point to the same object.
+  -> Shared pointers have co-ownerships.
+  -> use_count() -> gives the number of shared pointer points managing the current object.
+  -> if one of the shared pointer will  be deleted doesn't mean the object will be deleted
+     until unless the use_count() is 0.
+  -> It involves overhead.
+   
+    shared_ptr<Test> p = make_shared<Test>(10);
+
+3. Weak Pointers :-
+  -> They always used for shared pointer
+  -> It is used for shared pointer objects.
+  -> It doesn't increase reference count(use_count())
+  -> It works as temporary pointer.
+  -> weak pointers are bound to existing object they don't own any objects.
+  -> To make weak pointer shared pointer for short amount of time.
+     weak_ptr<Test> p1 ;
+     {
+        shared_ptr<Test> p2 = make_shared<Test>(10);
+        p1 = p2;
+        shared_ptr<Test> p3 = lock(p1);
+     }

@@ -1,0 +1,68 @@
+Pointers :-
+
+  1.Its a variable.
+  2.The purpose of pointer is to store the adress of other variables.
+
+
+  '&' used before variable name gives adress of variable.
+   int x = 10;
+   cout << &x << endl; // print the adress in hexadecimal format.
+
+  
+  '*' used before an adress variable gives the value present at that adress.
+   int x = 10;
+   cout << *(&x) << endl; // prints the value 10
+
+
+Ex ->  1.  int main(){
+               int x = 10;
+               int *ptr = &x;
+               
+               cout << *ptr << endl; // 10
+               cout << ptr << endl; // adress of ptr
+           }
+
+Applications of Pointer :-
+  
+  1. Changing passed parameters.
+     void swap(int *a,int *b){
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+     }
+
+     int main(){
+	int x=10,y=10;
+	swap(x,y);
+     }
+  
+  2. Passing large objects to avoid copy of objects in functions.
+     -> NOTE -> In this case references is better choice than pointer but we can use this also.
+     void change(vector<int> *v){}
+     int main(){
+        vector<int> v = {1,2,3};
+        change(&v);
+     }
+  
+  3. Dynamic Memory allocation.
+  4. Implmenting data structure like linked list ,tree,BST etc.
+  5. To do system level programming (low level)
+  6. To return multiple values.
+     void getsummul(int x,int y,int *add,int *mul){
+	*add = x+y;
+	*mul = x*y;
+     }
+
+     int main(){
+	int a=10,y=20;
+	int add,mul;
+	getsummul(a,y,&add,&mul);
+     }
+  7. Used to access array elements.
+     int main(){
+       int arr[] = {1,2,3,4};
+       int *ptr = arr;
+       cout << *ptr << endl; // 1
+       cout << *(ptr+3) << endl; // 4
+     }
+   

@@ -1,0 +1,34 @@
+                   CLASS                                                 STRUCT
+                
+             #include<iostream>                                   #include<iostream>
+             using namespace std;                                 using namespace std;
+ 
+             class Point{                                         struct Point{
+	       int x;                                               int x;
+	       int y;                                               int y;
+             };                                                   };
+
+             int main(){                                          int main(){
+	       Point p;                                             Point p;
+	       p.x = 10;                                            p.x = 10;
+       	       p.y = 20;                                            p.y = 20;
+             }                                                    }
+
+
+      
+      output -> Compiler error                             output ->  Complied successfully.
+
+
+-> A class has all the members are private by default.
+-> In structure things are public by default.
+
+  Note -> we can make class members public and structure members private.
+
+-> Like classes we can have constructors,destructors,functions in a struct.
+
+
+Que.  When to use structure and when to use class?
+->    we can always use struct in place of class and class in place of struct.
+      But as a general practice we use structure when we only want to bundle multiple items together.
+      But when we care about OOP and data hiding we use classes in general.
+      (Classes emphasises on data hiding,that's why things are private by default).

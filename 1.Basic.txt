@@ -1,0 +1,39 @@
+C++ is a programming language.
+ 
+    1. Its close to hardware.
+    2. It contain pointers and memory access functions.
+    3. It can write device driver and OS(operating systems)
+       (Most of the operating systems are written in c and c++)
+    
+Q.Why C++?
+->C++ program are generally faster than Java and Python because its a 
+  complied language.
+
+Q.What is Compiled Language?
+->C++ program convert source code into binary code in one go then we have
+  executable code(machine dependent).
+
+         Machine dependent -> only runs on particular machine.
+
+         Java and Python are interpreted language it convert source code into 
+         binary code line-by-line then we have executable code(machine independent).
+         Due to property of machine independent java and python are famous.
+
+                 C++ --> 1.low level programming and high level programming.
+                         2.Fast execution.
+                         3.Derived From C.
+                         4.Richer library than C.
+                         5.Object Oriented Programming.
+
+NOTE ->> JAVA CONTAIN MORE CODE COMPARE TO C++ BUT JAVA CODE ARE MUCH MORE 
+         MAINTAINABLE.C++ ALLOWS US TO WRITE BAD CODE BUT JAVA DOESN'T.
+
+APPLICATIONS :-
+     1.Chrome,Firefox.
+     2.Adobe Products.
+     3.Most of the OS written in C++.
+     4.Game Drivers,Device Drivers.
+
+
+
+  

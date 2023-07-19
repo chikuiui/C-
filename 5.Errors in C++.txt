@@ -1,0 +1,27 @@
+ Errors In C++
+
+1. Syntax Error:-
+   -> means there should be closing bracket if it has opening bracket {} () []
+   -> ; at the end of statement.
+   -> a variable should be declared before initialized.
+
+2. Semantic Error:-
+   -> It occur when program statement doesn't make any sense.
+   Ex-> ;16 = x
+
+3. Linker Error :-
+   ->It occur in linking phase like you calling a function and a function declaration
+     is not present you will get linker error.
+   Ex-> void fun();
+        int main(){
+           fun();
+        }
+
+4. Runtime Error :-
+   -> Occur when programme is running.
+   -> These kinds of error are much more dangerous.(hard to catch)
+   Ex->  x/y; when y = 0
+
+5. Logical Error :-
+   Ex -> x = a + b/2  but it should be x = (a+b)/2;
+

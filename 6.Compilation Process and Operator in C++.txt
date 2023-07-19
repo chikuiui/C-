@@ -1,0 +1,31 @@
+
+   Compilation Process
+
+Preprocessor -- Compiler -- Binary Code Generated -- Linking of functions -- Executable code.
+
+
+
+   Operators in C++ :-
+
+1. Arithmatic Operators :-
+    +  -  /  *  %  ++  --
+
+   NOTE-> If using unary operator(++,--) in a single statement multiple times then the behaviour of program will
+          depend on compiler.
+   NOTE-> C++ exclusive type casting function =  static_cast<datatype>()
+
+2. Relational Operator :-
+    <  >  ==  >=  <=  !=
+    
+   used in conditional statements and loops.
+
+3. Logical Operator :-
+   &&  ||  !
+   
+   && and || are both binary operator they require two operand to perform.
+   ! is unary opertor means only require one operand to perform.
+
+4. Assignment operator :-
+   =  +=  -=  *=  /=  %=  <<=  >>=  
+   
+   much faster compare to normal ways.

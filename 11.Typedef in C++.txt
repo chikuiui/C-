@@ -1,0 +1,18 @@
+We use typedef so that we can avoid using long statement.
+
+typedef long long ll;
+typedef unsigned long long ull;
+
+
+typedef struct Point{
+   int x;
+   int y;
+}P;
+
+
+int main(){
+   P p;
+   p.x = 10;
+   p.y = 20;
+   cout << p.x << " " << p.y << endl;
+}
